@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node ../server",
     "server": "nodemon ../server",
-    "front_end": "npm start --prefix ../front_end",
-    "dev": "concurrently \"npm run server\" \" npm run front_end\""
+    "client": "npm start --prefix ../client",
+    "dev": "concurrently \"npm run server\" \" npm run client\""
   },
   "keywords": [],
   "author": "",
