@@ -14,7 +14,7 @@ const getAllUsers = asyncHandler(async (req,res)=>{
 
 
 const createNewUser = asyncHandler(async (req, res) => {
-    const { username, email, password, ConfirmPassword, roles } = req.body;
+    const { username, email, password, roles } = req.body;
 
     if (!username || !password || !email) {
         return res.status(400).json({ message: 'All fields are required' });
@@ -24,9 +24,7 @@ const createNewUser = asyncHandler(async (req, res) => {
 
     if (duplicate) return res.status(409).json({ message: "Duplicate user" });
 
-    if (ConfirmPassword !== password) {
-        return res.status(400).json({ message: "Invalid user password" }); // Change status to 400
-    }
+    
 
     // Hashing password
     const hashedPassword = await bcrypt.hash(password, 10);

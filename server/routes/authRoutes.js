@@ -4,7 +4,7 @@ const authController = require('../controllers/authController');
 const LoginLimiter = require('../midleware/LoginLimiter');
 
 
-router.route('/')
+router.route('/login')
     .post(LoginLimiter, authController.login)
 
 
